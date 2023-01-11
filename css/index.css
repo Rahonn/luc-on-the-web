@@ -13,15 +13,42 @@ body {
 
 }
 
-a {
+.gh {
 
     text-decoration: none;
     color: #ff4848;
 
 }
 
-a:hover {
+.gh:hover {
 
     text-shadow: #990000 2px 2px 5px;
+
+}
+
+.getstarted {
+
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #ff4848;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #f3f3f3;
+
+}
+
+.getstarted:hover {
+
+    box-shadow: #990000 2px 2px 5px inset;
+
+}
+
+
+.thisgh {
+
+    position: relative;
+
+    top: 35rem;
 
 }
