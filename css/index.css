@@ -19,3 +19,9 @@ a {
     color: #ff4848;
 
 }
+
+a:hover {
+
+    text-shadow: #990000 2px 2px 5px;
+
+}
