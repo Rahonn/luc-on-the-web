@@ -17,19 +17,35 @@ export let defaultvars = {
 
 export let commandsList = []
 
-export let output = ""
+export let output = []
 
 export function reset() {
 
     commandsList = []
     vars = defaultvars
-    output = ""
+    output = []
 
 }
 
-export function log(line) {
+export function log(line, color = "white") {
 
-    output += line + "\n"
+    output.push({ line, color })
+
+}
+
+export function display(elem) {
+
+    for (let i = 0; i < output.length; i++) {
+
+        let e = $("<div></div>")
+
+        e.text(output[i].line)
+
+        e.addClass("code " + output[i].color)
+
+        $("#output").append(e)
+
+    }
 
 }
 

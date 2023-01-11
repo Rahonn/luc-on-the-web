@@ -1,5 +1,5 @@
 import { runLUC } from "./luc-engine/runner.js"
-import { output, reset } from "./luc-engine/varmanager.js";
+import { display, output, reset } from "./luc-engine/varmanager.js";
 
 function main() {
 
@@ -29,21 +29,9 @@ function main() {
 
         await runLUC(code)
 
-        let ol = output.split("\n")
-
         $("#output").empty()
 
-        for (let i = 0; i < ol.length; i++) {
-
-            let e = $("<div></div>")
-
-            e.text(ol[i])
-
-            e.addClass("code white")
-
-            $("#output").append(e)
-
-        }
+        display($("#output"))
 
         reset()
 

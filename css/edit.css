@@ -79,6 +79,12 @@ body {
 
 }
 
+.code.red {
+
+    color: #c56667;
+
+}
+
 .code.white {
 
     color: #ffffff;

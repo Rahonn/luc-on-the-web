@@ -14,7 +14,16 @@ export async function runLUC(code) {
 
     for (let i = 0; i < varmanager.commandsList.length; i++) {
 
-        varmanager.commandsList[i].run()
+        if (!varmanager.commandsList[i].run()) {
+
+            varmanager.log("Error!!!", "red")
+            varmanager.log(lines[i], "white")
+            varmanager.log(" ^", "blue")
+            varmanager.log(" | Error on this line!", "blue")
+
+            return;
+
+        }
 
     }
 
