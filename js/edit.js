@@ -2,26 +2,48 @@ import { runLUC } from "./luc-engine/runner.js"
 import { loadTemp, saveTemp } from "./luc-engine/saving.js";
 import { display, output, reset } from "./luc-engine/varmanager.js";
 
+function loadTempData() {
+
+    $("#code").empty()
+
+    let lines = atob(loadTemp()).split("\n");
+
+
+    for (let i = 0; i < lines.length; i++) {
+
+        let rapper = $("<div></div>")
+
+        rapper.text(lines[i])
+
+        $("#code").append(rapper)
+
+
+    }
+
+}
+
+function saveTempData() {
+
+    let l = $("#code").length;
+
+    code = ""
+
+    for (let i = 0; i < l; i++) {
+
+        code += $("#code").get(i).innerText + "\n"
+
+    }
+
+    saveTemp(code)
+
+}
+
 function main() {
 
 
     if (loadTemp() != null) {
 
-        $("#code").empty()
-
-        let lines = atob(loadTemp()).split("\n");
-
-
-        for (let i = 0; i < lines.length; i++) {
-
-            let rapper = $("<div></div>")
-
-            rapper.text(lines[i])
-
-            $("#code").append(rapper)
-
-
-        }
+        loadTempData()
 
     }
 
@@ -63,17 +85,13 @@ function main() {
 
     $("#code").on("DOMSubtreeModified", () => {
 
-        let l = $("#code").length;
+        saveTempData()
 
-        code = ""
+    })
 
-        for (let i = 0; i < l; i++) {
+    $("#code").on("input", () => {
 
-            code += $("#code").get(i).innerText + "\n"
-
-        }
-
-        saveTemp(code)
+        saveTempData()
 
     })
 
