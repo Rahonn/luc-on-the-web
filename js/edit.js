@@ -11,7 +11,6 @@ function main() {
 
         let lines = atob(loadTemp()).split("\n");
 
-        console.log(lines);
 
         for (let i = 0; i < lines.length; i++) {
 
