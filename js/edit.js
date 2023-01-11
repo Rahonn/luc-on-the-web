@@ -40,6 +40,8 @@ function saveTempData() {
 
 function main() {
 
+    $(".input").hide()
+
 
     if (loadTemp() != null) {
 

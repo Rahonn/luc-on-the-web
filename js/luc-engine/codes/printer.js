@@ -7,7 +7,7 @@ export default class Printer extends Command {
 
         super(line);
 
-        this.text = this.line.slice(6, line.length);
+        this.text = this.line.slice(6);
 
     }
 

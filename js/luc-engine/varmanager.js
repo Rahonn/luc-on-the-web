@@ -27,6 +27,18 @@ export function reset() {
 
 }
 
+export function setVar(name, value) {
+
+    vars[name] = value
+
+}
+
+export function getVar(name) {
+
+    return vars[name]
+
+}
+
 export function log(line, color = "white") {
 
     output.push({ line, color })

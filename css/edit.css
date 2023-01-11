@@ -35,8 +35,16 @@ body {
     border-color: #454545;
     border-style: solid;
     padding: 15px;
-
     margin-top: 15px;
+
+    overflow: hidden;
+    overflow-y: hidden;
+
+}
+
+.input {
+
+    outline: none;
 
 }
 
@@ -44,6 +52,15 @@ body {
 
     text-align: right;
     margin: 20px;
+
+}
+
+.input {
+
+    background-color: #111111;
+    border-style: none;
+    width: 75%;
+    display: inline;
 
 }
 
@@ -88,5 +105,11 @@ body {
 .code.white {
 
     color: #ffffff;
+
+}
+
+.code.green {
+
+    color: #24bf7b;
 
 }
