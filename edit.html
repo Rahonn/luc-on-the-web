@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/edit.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="js/edit.js" type="module" defer></script>
     <title>LUC on the Web - Editor</title>
 </head>
 <body>
-    
+    <h1>LUC Web editor!</h1>
+
+    <div class="toolbar">
+        <button class="run" id="runbtn">Run</button>
+    </div>
+
+
+    <div class="writecodehere code" contenteditable="true" id="code"><div>PRINT Hello World!</div></div>
+
+
+    <div class="output code" id="output"><div class="code blue">Press the run button to run your code!</div></div>
+
 </body>
 </html>
