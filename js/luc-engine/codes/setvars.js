@@ -1,5 +1,5 @@
 import Command from "./basecode.js";
-import { log, output, setVar, vars } from "../varmanager.js";
+import { log, setVar, vars } from "../varmanager.js";
 
 
 export default class SetVars extends Command {

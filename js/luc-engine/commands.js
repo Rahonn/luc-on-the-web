@@ -4,6 +4,7 @@ import { Comment, COMMENT_CHAR } from "./codes/comment.js"
 import ErrorOut from "./codes/errorout.js"
 import SetVars from "./codes/setvars.js"
 import PrintVar from "./codes/printvar.js"
+import Input from "./codes/input.js"
 
 
 export function getCommand(line) {
@@ -14,7 +15,7 @@ export function getCommand(line) {
 
     }
 
-    if (new RegExp("/^" + COMMENT_CHAR + "/").exec(line) || line.trim() == "") {
+    if (line.startsWith(COMMENT_CHAR) || line.trim() == "") {
 
         return new Comment(line)
 
@@ -29,6 +30,12 @@ export function getCommand(line) {
     if (/^PRINTVAR /.exec(line)) {
 
         return new PrintVar(line)
+
+    }
+
+    if (/^INPUT /.exec(line)) {
+
+        return new Input(line)
 
     }
 

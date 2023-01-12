@@ -1,6 +1,6 @@
 import { runLUC } from "./luc-engine/runner.js"
 import { loadTemp, saveTemp } from "./luc-engine/saving.js";
-import { display, output, reset } from "./luc-engine/varmanager.js";
+import { reset, commandsList, log } from "./luc-engine/varmanager.js";
 
 function loadTempData() {
 
@@ -40,18 +40,30 @@ function saveTempData() {
 
 function main() {
 
+    
     $(".input").hide()
-
-
+    $("#input").val("")
+    
+    
     if (loadTemp() != null) {
-
+        
         loadTempData()
-
+        
     }
-
+    
     $("#runbtn").on("click", async function() {
+        
+        if ($("#runbtn").hasClass("disabled")) {
+
+            return;
+
+        }
 
         $("#output").empty()
+
+        $("#code").attr("contenteditable", "false")
+        $("#code").addClass("disabled")
+        $("#runbtn").addClass("disabled")
 
         let loadingtext = $("<div></div>")
 
@@ -77,11 +89,34 @@ function main() {
 
         $("#output").empty()
 
-        display($("#output"))
+        $("*").removeClass("loading")
+
+
+        let lines = code.split("\n")
+
+        for (let i = 0; i < commandsList.length; i++) {
+
+            if (!await commandsList[i].run()) {
+
+
+
+                log("Error!!!", "red")
+                log(lines[i], "white")
+                log(" ^", "blue")
+                log(" | Error on this line!", "blue")
+
+                break
+
+            }
+
+        }
 
         reset()
 
-        $("*").removeClass("loading")
+        $("#code").attr("contenteditable", "true")
+        $("#code").removeClass("disabled")
+        $("#runbtn").removeClass("disabled")
+
 
     })
 

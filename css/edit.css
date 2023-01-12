@@ -42,12 +42,6 @@ body {
 
 }
 
-.input {
-
-    outline: none;
-
-}
-
 .toolbar {
 
     text-align: right;
@@ -57,10 +51,12 @@ body {
 
 .input {
 
+    outline: none;
     background-color: #111111;
     border-style: none;
     width: 75%;
     display: inline;
+    font-size: inherit;
 
 }
 
@@ -75,6 +71,43 @@ body {
     border-radius: 5px;
     width: 25%;
     padding: 10px;
+    font-family: inherit;
+
+}
+
+.enterbtn {
+
+    width: 15%;
+    margin-left: 2%;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: #f3f3f3;
+    background-color: #24bf7b;
+    cursor: pointer;
+
+}
+
+.enterbtn:active {
+
+    background-color: #1d9762;
+    color: #3f3f3f;
+
+}
+
+#input {
+
+    border-bottom-style: solid;
+    border-bottom-color: #2f2f2f;
+    border-bottom-width: 2px;
+
+}
+
+.disabled {
+
+    cursor: not-allowed;
 
 }
 
