@@ -111,9 +111,10 @@ body {
 
 }
 
-.run:hover {
+.run:active {
 
-    box-shadow: #34a52c 5px 5px 25px, #34a52c -5px -5px 25px;
+    color: #3f3f3f;
+    background-color: #309e28;
 
 }
 
