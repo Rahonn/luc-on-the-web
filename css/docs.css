@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu+Mono&display=swap');
+
+body {
+
+    background-color: #161616;
+    color: #f3f3f3;
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.code {
+
+    font-family: 'Ubuntu Mono', monospace;
+
+}

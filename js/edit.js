@@ -165,7 +165,7 @@ async function main() {
         
     }
 
-    if (code != null) {
+    if (code != null && code != "null") {
 
         loadCode(code)
 

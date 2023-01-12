@@ -44,25 +44,6 @@ body {
 
 }
 
-.learn {
-
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #45c337;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    color: #f3f3f3;
-
-}
-
-
-.learn:hover {
-
-    box-shadow: #2a7722 2px 2px 5px inset;
-
-}
-
 .docs {
 
     text-decoration: none;
