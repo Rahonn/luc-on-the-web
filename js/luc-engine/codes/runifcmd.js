@@ -11,6 +11,9 @@ export default class RunIfCmd extends Command {
         this.arg2isNum = null
         this.arg2isVar = null
         this.arg2isStr = null
+        this.didRun = false
+        this.wasTrue = null
+        this.wasFalse = null
 
         this.text = this.line.slice(3)
 
@@ -238,6 +241,8 @@ export default class RunIfCmd extends Command {
                     }
 
                     didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
 
                 } else {
 
@@ -251,6 +256,8 @@ export default class RunIfCmd extends Command {
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -267,11 +274,13 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
 
                     didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
 
                 } else {
 
@@ -281,10 +290,12 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -296,19 +307,20 @@ export default class RunIfCmd extends Command {
                     
                     
                     if (await !getCommand(this.iftrue).run()) {
-                        
+
                         log("Error!!!", "red")
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
-                        
-                    }
-                    
-                    didIf = true
-                    
-                } else {
 
+
+                    }
+
+                    didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
+
+                } else {
 
                     if (await !getCommand(this.iffalse).run()) {
 
@@ -316,10 +328,12 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -336,11 +350,13 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
 
                     didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
 
                 } else {
 
@@ -350,10 +366,12 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -370,11 +388,13 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
 
                     didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
 
                 } else {
 
@@ -384,10 +404,12 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -404,11 +426,13 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
 
                     didIf = true
+                    this.wasTrue = true
+                    this.wasFalse = false
 
                 } else {
 
@@ -418,10 +442,12 @@ export default class RunIfCmd extends Command {
                         log(lines[i], "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
-                        
+
 
                     }
                     didIf = true
+                    this.wasFalse = true
+                    this.wasTrue = false
 
                 }
 
@@ -432,6 +458,8 @@ export default class RunIfCmd extends Command {
             return false
 
         }
+
+        this.didRun = true
 
         return didIf
 
@@ -452,7 +480,10 @@ export default class RunIfCmd extends Command {
             "arg1isVar": this.arg1isVar,
             "arg2isVar": this.arg2isVar,
             "arg1isStr": this.arg1isStr,
-            "arg2isStr": this.arg2isStr
+            "arg2isStr": this.arg2isStr,
+            "didRun": this.didRun,
+            "wasTrue": this.wasTrue,
+            "wasFalse": this.wasFalse
 
         }
 

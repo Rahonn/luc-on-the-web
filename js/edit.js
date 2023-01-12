@@ -105,36 +105,43 @@ async function run() {
     for (let i = 0; i < commandsList.length; i++) {
 
 
+        
+        
+        if (commandsList[i].constructor.name == "ExitCmd") {
+            
+            break;
+            
+        }
+        
+        if (!await commandsList[i].run()) {
+            
+            
+            
+            log("Error!!!", "red")
+            log(lines[i], "white")
+            log(" ^", "blue")
+            log(" | Error on this line!", "blue")
+            
+            break
+            
+        }
+
         if (commandsList[i].constructor.name == "RunIfCmd") {
 
-            if (commandsList[i].iftrue == "EXIT" || commandsList[i].iffalse == "EXIT") {
+            if (commandsList[i].iftrue == "EXIT" && commandsList[i].didRun && commandsList[i].wasTrue) {
+
+                break;
+
+            }
+
+            if (commandsList[i].iffalse == "EXIT" && commandsList[i].didRun && commandsList[i].wasFalse) {
 
                 break;
 
             }
 
         }
-
-
-        if (commandsList[i].constructor.name == "ExitCmd") {
-
-            break;
-
-        }
-
-        if (!await commandsList[i].run()) {
-
-
-
-            log("Error!!!", "red")
-            log(lines[i], "white")
-            log(" ^", "blue")
-            log(" | Error on this line!", "blue")
-
-            break
-
-        }
-
+        
     }
 
     reset()
