@@ -6,6 +6,7 @@ import SetVars from "./codes/setvars.js"
 import PrintVar from "./codes/printvar.js"
 import Input from "./codes/input.js"
 import MathCmd from "./codes/mathcmd.js"
+import Delay from "./codes/delaycmd.js"
 
 
 export function getCommand(line) {
@@ -43,6 +44,12 @@ export function getCommand(line) {
     if (/^MATH /.exec(line)) {
 
         return new MathCmd(line)
+
+    }
+
+    if (/^DELAY /.exec(line)) {
+
+        return new Delay(line)
 
     }
 
