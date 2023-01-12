@@ -75,6 +75,22 @@ body {
 
 }
 
+.share {
+
+    text-transform: uppercase;
+    font-size: medium;
+    color: #f3f3f3;
+    background-color: #3573cf;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 25%;
+    padding: 10px;
+    font-family: inherit;
+    text-decoration: none;
+
+}
+
 .enterbtn {
 
     width: 15%;

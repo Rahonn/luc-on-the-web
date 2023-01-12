@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu+Mono&display=swap');
+
+body {
+
+    background-color: #161616;
+    color: #f3f3f3;
+
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+
+}
+
+.code {
+
+    font-family: 'Ubuntu Mono', monospace;
+
+}
+
+.link {
+
+    color: #222222;
+    background: #f3f3f3;
+    padding: 0.5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #222222 inset;
+
+    word-wrap: break-word;
+
+}
+
+.mode {
+
+    margin: 15px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+#showcasebox {
+
+    font-size: larger;
+
+}
