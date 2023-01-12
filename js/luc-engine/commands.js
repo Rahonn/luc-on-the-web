@@ -20,7 +20,7 @@ export function getCommand(line) {
 
     }
 
-    if (line.startsWith(COMMENT_CHAR) || line.trim() == "") {
+    if (line.startsWith(COMMENT_CHAR) || line.startsWith("!") || line.trim() == "") {
 
         return new Comment(line)
 
