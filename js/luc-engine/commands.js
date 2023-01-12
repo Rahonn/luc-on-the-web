@@ -9,6 +9,7 @@ import Delay from "./codes/delaycmd.js"
 import IfCmd from "./codes/ifcmd.js"
 import RunIfCmd from "./codes/runifcmd.js"
 import ExitCmd from "./codes/exitcmd.js"
+import PassCmd from "./codes/passcmd.js"
 
 
 export function getCommand(line) {
@@ -70,6 +71,12 @@ export function getCommand(line) {
     if (/^EXIT/.exec(line)) {
 
         return new ExitCmd(line)
+
+    }
+
+    if (/^PASS/.exec(line)) {
+
+        return new PassCmd(line)
 
     }
 
