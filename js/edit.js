@@ -94,7 +94,28 @@ function main() {
 
         let lines = code.split("\n")
 
+        console.info("Running...")
+
         for (let i = 0; i < commandsList.length; i++) {
+
+            console.info("Running command with the type of " + commandsList[i].constructor.name)
+
+            if (commandsList[i].constructor.name == "RunIfCmd") {
+
+                if (commandsList[i].iftrue == "EXIT" || commandsList[i].iffalse == "EXIT") {
+
+                    break;
+
+                }
+
+            }
+
+
+            if (commandsList[i].constructor.name == "ExitCmd") {
+
+                break;
+
+            }
 
             if (!await commandsList[i].run()) {
 
