@@ -1,7 +1,7 @@
 
 export let vars = {
 
-    "LOTW": "1.0.0",
+    "LOTW": "1.0.1",
     "VERSION": "8.0.2"
 
 }
@@ -9,7 +9,7 @@ export let vars = {
 
 export let defaultvars = {
 
-    "LOTW": "1.0.0",
+    "LOTW": "1.0.1",
     "VERSION": "8.0.2"
 
 }
