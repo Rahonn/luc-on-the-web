@@ -44,7 +44,7 @@ export default class MathCmd extends Command {
 
             }
             
-            if (num1 == NaN || num2 == NaN) {
+            if (Number.isNaN(num1) || Number.isNaN(num2)) {
 
                 return false
 

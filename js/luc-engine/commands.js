@@ -1,4 +1,3 @@
-import * as varvarmanager from "./varmanager.js"
 import Printer from "./codes/printer.js"
 import { Comment, COMMENT_CHAR } from "./codes/comment.js"
 import ErrorOut from "./codes/errorout.js"
@@ -7,6 +6,7 @@ import PrintVar from "./codes/printvar.js"
 import Input from "./codes/input.js"
 import MathCmd from "./codes/mathcmd.js"
 import Delay from "./codes/delaycmd.js"
+import IfCmd from "./codes/ifcmd.js"
 
 
 export function getCommand(line) {
@@ -50,6 +50,12 @@ export function getCommand(line) {
     if (/^DELAY /.exec(line)) {
 
         return new Delay(line)
+
+    }
+
+    if (/^IF /.exec(line)) {
+
+        return new IfCmd(line)
 
     }
 
