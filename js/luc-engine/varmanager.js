@@ -1,16 +1,16 @@
 
 export let vars = {
 
-    "LOTW": "0.0.1",
-    "VERSION": "0.0.1"
+    "LOTW": "1.0.0",
+    "VERSION": "8.0.2"
 
 }
 
 
 export let defaultvars = {
 
-    "LOTW": "0.0.1",
-    "VERSION": "0.0.1"
+    "LOTW": "1.0.0",
+    "VERSION": "8.0.2"
 
 }
 

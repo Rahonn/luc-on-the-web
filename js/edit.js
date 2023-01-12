@@ -38,9 +38,100 @@ function saveTempData() {
 
 }
 
-function main() {
+async function run() {
+
+    if ($("#runbtn").hasClass("disabled")) {
+
+        return;
+
+    }
+
+    $("#output").empty()
+
+    $("#code").attr("contenteditable", "false")
+    $("#code").addClass("disabled")
+    $("#runbtn").addClass("disabled")
+
+    let loadingtext = $("<div></div>")
+
+    loadingtext.text("Loading...")
+
+    loadingtext.addClass("code blue")
+
+    $("#output").append(loadingtext)
+
+    $("*").addClass("loading")
+
+    let l = $("#code").length;
+
+    code = ""
+
+    for (let i = 0; i < l; i++) {
+
+        code += $("#code").get(i).innerText + "\n"
+
+    }
+
+    await runLUC(code)
+
+    $("#output").empty()
+
+    $("*").removeClass("loading")
+
+
+    let lines = code.split("\n")
+
+
+    for (let i = 0; i < commandsList.length; i++) {
+
+
+        if (commandsList[i].constructor.name == "RunIfCmd") {
+
+            if (commandsList[i].iftrue == "EXIT" || commandsList[i].iffalse == "EXIT") {
+
+                break;
+
+            }
+
+        }
+
+
+        if (commandsList[i].constructor.name == "ExitCmd") {
+
+            break;
+
+        }
+
+        if (!await commandsList[i].run()) {
+
+
+
+            log("Error!!!", "red")
+            log(lines[i], "white")
+            log(" ^", "blue")
+            log(" | Error on this line!", "blue")
+
+            break
+
+        }
+
+    }
+
+    reset()
+
+    $("#code").attr("contenteditable", "true")
+    $("#code").removeClass("disabled")
+    $("#runbtn").removeClass("disabled")
+
+}
+
+async function main() {
 
     
+    let url = new URL(location.href);
+
+    let showcasemode = (url.searchParams.get("showcase") != null && url.searchParams.get("showcase") == "y");
+
     $(".input").hide()
     $("#input").val("")
     
@@ -50,91 +141,20 @@ function main() {
         loadTempData()
         
     }
-    
-    $("#runbtn").on("click", async function() {
-        
-        if ($("#runbtn").hasClass("disabled")) {
 
-            return;
+    if (showcasemode) {
 
-        }
-
-        $("#output").empty()
-
+        $(".top").hide()
+        await run()
         $("#code").attr("contenteditable", "false")
         $("#code").addClass("disabled")
         $("#runbtn").addClass("disabled")
 
-        let loadingtext = $("<div></div>")
-
-        loadingtext.text("Loading...")
-
-        loadingtext.addClass("code blue")
-
-        $("#output").append(loadingtext)
-
-        $("*").addClass("loading")
-
-        let l = $("#code").length;
-
-        code = ""
-
-        for (let i = 0; i < l; i++) {
-
-            code += $("#code").get(i).innerText + "\n"
-
-        }
-
-        await runLUC(code)
-
-        $("#output").empty()
-
-        $("*").removeClass("loading")
-
-
-        let lines = code.split("\n")
-
-
-        for (let i = 0; i < commandsList.length; i++) {
-
-
-            if (commandsList[i].constructor.name == "RunIfCmd") {
-
-                if (commandsList[i].iftrue == "EXIT" || commandsList[i].iffalse == "EXIT") {
-
-                    break;
-
-                }
-
-            }
-
-
-            if (commandsList[i].constructor.name == "ExitCmd") {
-
-                break;
-
-            }
-
-            if (!await commandsList[i].run()) {
-
-
-
-                log("Error!!!", "red")
-                log(lines[i], "white")
-                log(" ^", "blue")
-                log(" | Error on this line!", "blue")
-
-                break
-
-            }
-
-        }
-
-        reset()
-
-        $("#code").attr("contenteditable", "true")
-        $("#code").removeClass("disabled")
-        $("#runbtn").removeClass("disabled")
+    }
+    
+    $("#runbtn").on("click", async function() {
+        
+        await run()
 
 
     })
