@@ -5,6 +5,7 @@ import ErrorOut from "./codes/errorout.js"
 import SetVars from "./codes/setvars.js"
 import PrintVar from "./codes/printvar.js"
 import Input from "./codes/input.js"
+import MathCmd from "./codes/mathcmd.js"
 
 
 export function getCommand(line) {
@@ -36,6 +37,12 @@ export function getCommand(line) {
     if (/^INPUT /.exec(line)) {
 
         return new Input(line)
+
+    }
+
+    if (/^MATH /.exec(line)) {
+
+        return new MathCmd(line)
 
     }
 
