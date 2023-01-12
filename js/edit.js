@@ -22,6 +22,26 @@ function loadTempData() {
 
 }
 
+function loadCode(ec) {
+
+    $("#code").empty()
+
+    let lines = atob(ec).split("\n");
+
+
+    for (let i = 0; i < lines.length; i++) {
+
+        let rapper = $("<div></div>")
+
+        rapper.text(lines[i])
+
+        $("#code").append(rapper)
+
+
+    }
+
+}
+
 function saveTempData() {
 
     let l = $("#code").length;
@@ -130,16 +150,25 @@ async function main() {
     
     let url = new URL(location.href);
 
-    let showcasemode = (url.searchParams.get("showcase") != null && url.searchParams.get("showcase") == "y");
+    let showcasemode = (url.searchParams.get("showcase") != null || url.searchParams.get("showcase") == "y");
+    let code = url.searchParams.get("code");
+
+
 
     $(".input").hide()
     $("#input").val("")
     
     
-    if (loadTemp() != null) {
+    if (loadTemp() != null && code == null) {
         
         loadTempData()
         
+    }
+
+    if (code != null) {
+
+        loadCode(code)
+
     }
 
     if (showcasemode) {
