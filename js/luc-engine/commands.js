@@ -7,6 +7,7 @@ import Input from "./codes/input.js"
 import MathCmd from "./codes/mathcmd.js"
 import Delay from "./codes/delaycmd.js"
 import IfCmd from "./codes/ifcmd.js"
+import RunIfCmd from "./codes/runifcmd.js"
 
 
 export function getCommand(line) {
@@ -56,6 +57,12 @@ export function getCommand(line) {
     if (/^IF /.exec(line)) {
 
         return new IfCmd(line)
+
+    }
+
+    if (/^RUNIF /.exec(line)) {
+
+        return new RunIfCmd(line)
 
     }
 
