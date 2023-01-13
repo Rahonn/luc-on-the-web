@@ -7,21 +7,15 @@
     <link rel="stylesheet" href="css/share.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="js/share.js" type="module" defer></script>
-    <script src="https://js.hcaptcha.com/1/api.js?render=explicit" async defer></script>
+    <script src="js/share.js"></script>
     <title>LUC on the Web - Share</title>
 </head>
 <body>
     <h1>Share this link!</h1>
-    <div class="capt">
-
+    <div class="mode">
+        <label for="showcasebox">Showcase: </label>
+        <input type="checkbox" id="showcasebox">
     </div>
-    <div class="nobot" style="display: none;">
-        <div class="mode">
-            <label for="showcasebox">Showcase: </label>
-            <input type="checkbox" id="showcasebox">
-        </div>
-        <div class="link code" id="link">Loading...</div>
-    </div>
+    <div class="link code" id="link">Loading...</div>
 </body>
 </html>
