@@ -1,0 +1,28 @@
+{
+  "name": "luc-on-the-web",
+  "version": "2.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahonn/luc-on-the-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rahonn/luc-on-the-web/issues"
+  },
+  "homepage": "https://github.com/Rahonn/luc-on-the-web#readme",
+  "devDependencies": {
+    "@parcel/babel-preset-env": "^2.8.3",
+    "@parcel/transformer-babel": "^2.8.3",
+    "babel": "^6.23.0",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "jquery": "^3.6.3"
+  }
+}

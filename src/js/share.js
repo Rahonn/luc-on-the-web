@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 function genLink() {
 
     let url = new URL(location.href);

@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 import { runLUC } from "./luc-engine/runner.js"
 import { loadTemp, saveTemp } from "./luc-engine/saving.js";
 import { reset, commandsList, log } from "./luc-engine/varmanager.js";
