@@ -1,4 +1,4 @@
-import { getVar, log, setVar } from "../varmanager.js";
+import { getVar, setVar } from "../varmanager.js";
 import Command from "./basecode.js";
 
 export default class MathCmd extends Command {

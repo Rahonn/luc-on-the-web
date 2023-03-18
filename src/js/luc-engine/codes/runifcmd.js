@@ -1,5 +1,5 @@
 import { getCommand } from "../commands.js";
-import { getVar, setVar, log } from "../varmanager.js";
+import { getVar, log } from "../varmanager.js";
 import Command from "./basecode.js";
 
 export default class RunIfCmd extends Command {
@@ -233,7 +233,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
                         
@@ -249,7 +249,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
                         
@@ -271,7 +271,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -287,7 +287,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -309,7 +309,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -325,7 +325,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -347,7 +347,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -363,7 +363,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -385,7 +385,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -401,7 +401,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -423,7 +423,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iftrue).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 
@@ -439,7 +439,7 @@ export default class RunIfCmd extends Command {
                     if (await !getCommand(this.iffalse).run()) {
 
                         log("Error!!!", "red")
-                        log(lines[i], "white")
+                        log(this.line, "white")
                         log(" ^", "blue")
                         log(" | Error on this line!", "blue")
 

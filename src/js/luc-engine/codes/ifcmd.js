@@ -1,4 +1,4 @@
-import { getVar, setVar, log } from "../varmanager.js";
+import { getVar, setVar } from "../varmanager.js";
 import Command from "./basecode.js";
 
 export default class IfCmd extends Command {

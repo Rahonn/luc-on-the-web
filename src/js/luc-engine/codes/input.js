@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 import { log, setVar } from "../varmanager.js";
 import Command from "./basecode.js";
 

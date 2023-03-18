@@ -48,7 +48,7 @@ function saveTempData() {
 
     let l = $("#code").length;
 
-    code = ""
+    let code = ""
 
     for (let i = 0; i < l; i++) {
 
@@ -86,7 +86,7 @@ async function run() {
 
     let l = $("#code").length;
 
-    code = ""
+    let code = ""
 
     for (let i = 0; i < l; i++) {
 
