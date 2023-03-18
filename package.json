@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "",
   "scripts": {
-    "build": "parcel build src/index.html",
-    "dev": "parcel src/index.html"
+    "build": "parcel build src/index.html --no-source-maps",
+    "dev": "parcel src/index.html",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,9 @@
     "@parcel/babel-preset-env": "^2.8.3",
     "@parcel/transformer-babel": "^2.8.3",
     "babel": "^6.23.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.27.5",
     "parcel": "^2.8.3"
   },
   "dependencies": {
